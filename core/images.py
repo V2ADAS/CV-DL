@@ -5,6 +5,7 @@ image_path = '../assets/road.jpg'
 
 # Read image in grayscale
 image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+image_color = cv2.imread(image_path, cv2.IMREAD_COLOR)
 
 # Create a Window
 cv2.namedWindow('Window 1', cv2.WINDOW_NORMAL)
@@ -25,7 +26,15 @@ if k == ord('s'):
 cv2.destroyAllWindows()
 
 # Display using matplotlib
+plt.figure(0)
 plt.imshow(image, cmap = 'gray', interpolation = 'bicubic')
+plt.xticks([])
+plt.yticks([])
+
+# Convert color order from OpenCV order to Matplotlib order
+img_clr_plt = cv2.cvtColor(image_color, cv2.COLOR_BGR2RGB)
+plt.figure(1)
+plt.imshow(img_clr_plt, interpolation = 'bicubic')
 plt.xticks([])
 plt.yticks([])
 plt.show()
