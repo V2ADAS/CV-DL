@@ -4,3 +4,4 @@ Following Tutorials from [this book]([https://drive.google.com/drive/folders/10E
 
 Deadlines:
   - [ ] Core - Monday - 16/10
+  - [ ] Image processing - Tuesday - 24/10
