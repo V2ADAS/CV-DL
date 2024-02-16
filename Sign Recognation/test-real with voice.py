@@ -1,8 +1,8 @@
 import cv2
-import time
-import numpy as np
-from ultralytics import YOLO
 import pygame
+from ultralytics import YOLO
+
+
 def play_audio(file_path):
     try:
         # Initialize Pygame
@@ -72,7 +72,7 @@ while cap.isOpened():
                     text = "\nWarning: You need to stop!\n"
                     #im_array = r.plot()  # plot a BGR numpy array of predictions
                     cv2.putText(annotated_frame, text, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
-                    audio_file_path = r'C:\Users\Tahany\PycharmProjects\YOLO SIGN RECOGNATION\stop.mp3'
+                    audio_file_path = r'audio files\stop.mp3'
 
                     # Play the audio file
                     play_audio(audio_file_path)
@@ -83,7 +83,7 @@ while cap.isOpened():
                     #im_array = r.plot()  # plot a BGR numpy array of predictions
                     cv2.putText(annotated_frame, text2, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
                     # Replace 'your_audio_file.mp3' with the path to your audio file
-                    audio_file_path = r'C:\Users\Tahany\PycharmProjects\YOLO SIGN RECOGNATION\speed50.mp3'
+                    audio_file_path = r'audio files\speed50.mp3'
 
                     # Play the audio file
                     play_audio(audio_file_path)
@@ -95,7 +95,7 @@ while cap.isOpened():
                     #im_array = r.plot()  # plot a BGR numpy array of predictions
                     cv2.putText(annotated_frame, text3, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
                     # Replace 'your_audio_file.mp3' with the path to your audio file
-                    audio_file_path = r'C:\Users\Tahany\PycharmProjects\YOLO SIGN RECOGNATION\speed100.mp3'
+                    audio_file_path = r'audio files\speed100.mp3'
 
                     # Play the audio file
                     play_audio(audio_file_path)
@@ -105,7 +105,7 @@ while cap.isOpened():
                     #im_array = r.plot()  # plot a BGR numpy array of predictions
                     cv2.putText(annotated_frame, text5, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
                     # Replace 'your_audio_file.mp3' with the path to your audio file
-                    audio_file_path = r'C:\Users\Tahany\PycharmProjects\YOLO SIGN RECOGNATION\speed120.mp3'
+                    audio_file_path = r'audio files\speed120.mp3'
 
                     # Play the audio file
                     play_audio(audio_file_path)
@@ -115,7 +115,7 @@ while cap.isOpened():
                     #im_array = r.plot()  # plot a BGR numpy array of predictions
                     cv2.putText(annotated_frame, text10, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
                     # Replace 'your_audio_file.mp3' with the path to your audio file
-                    audio_file_path = r'C:\Users\Tahany\PycharmProjects\YOLO SIGN RECOGNATION\speed60.mp3'
+                    audio_file_path = r'audio files\speed60.mp3'
 
                     # Play the audio file
                     play_audio(audio_file_path)
@@ -125,7 +125,7 @@ while cap.isOpened():
                     #im_array = r.plot()  # plot a BGR numpy array of predictions
                     cv2.putText(annotated_frame, text12, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
                     # Replace 'your_audio_file.mp3' with the path to your audio file
-                    audio_file_path = r'C:\Users\Tahany\PycharmProjects\YOLO SIGN RECOGNATION\speed80.mp3'
+                    audio_file_path = r'audio files\speed80.mp3'
 
                     # Play the audio file
                     play_audio(audio_file_path)
@@ -135,7 +135,7 @@ while cap.isOpened():
                     #im_array = r.plot()  # plot a BGR numpy array of predictions
                     cv2.putText(annotated_frame, text13, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
                     # Replace 'your_audio_file.mp3' with the path to your audio file
-                    audio_file_path = r'C:\Users\Tahany\PycharmProjects\YOLO SIGN RECOGNATION\speed20.mp3'
+                    audio_file_path = r'audio files\speed20.mp3'
 
                     # Play the audio file
                     play_audio(audio_file_path)
@@ -146,7 +146,7 @@ while cap.isOpened():
                     cv2.putText(annotated_frame, text15, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
 
                     # Replace 'your_audio_file.mp3' with the path to your audio file
-                    audio_file_path = r'C:\Users\Tahany\PycharmProjects\YOLO SIGN RECOGNATION\speed30.mp3'
+                    audio_file_path = r'audio files\speed30.mp3'
                     # Play the audio file
                     play_audio(audio_file_path)
 
@@ -156,7 +156,7 @@ while cap.isOpened():
                     #im_array = r.plot()  # plot a BGR numpy array of predictions
                     cv2.putText(annotated_frame, text20, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
                     # Replace 'your_audio_file.mp3' with the path to your audio file
-                    audio_file_path = r'C:\Users\Tahany\PycharmProjects\YOLO SIGN RECOGNATION\speed70.mp3'
+                    audio_file_path = r'audio files\speed70.mp3'
 
                     # Play the audio file
                     play_audio(audio_file_path)
