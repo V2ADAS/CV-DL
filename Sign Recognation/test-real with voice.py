@@ -4,26 +4,17 @@ from ultralytics import YOLO
 
 
 def play_audio(file_path):
+    if pygame.mixer.music.get_busy():
+        return
     try:
-        # Initialize Pygame
-        pygame.mixer.init()
-
         # Load the audio file
         pygame.mixer.music.load(file_path)
 
         # Play the audio file
         pygame.mixer.music.play()
 
-        # Wait for the audio to finish playing
-        while pygame.mixer.music.get_busy():
-            pygame.time.Clock().tick(10)
     except Exception as e:
         print("Error playing audio:", e)
-    finally:
-        # Clean up Pygame
-        pygame.mixer.quit()
-
-
 
 # Load the YOLOv8 model
 
@@ -33,10 +24,14 @@ print(model.names)
 
 cap = cv2.VideoCapture(0)
 
+# Initialize Pygame
+pygame.mixer.init()
+
 # Loop through the video frames
 while cap.isOpened():
     # Read a frame from the video
     success, frame = cap.read()
+    pygame.time.Clock().tick(10)
 
     if  success:
         # Run YOLOv8 inference on the frame
@@ -176,3 +171,5 @@ while cap.isOpened():
 # Release the video capture object and close the display window
 cap.release()
 cv2.destroyAllWindows()
+
+pygame.mixer.quit()
