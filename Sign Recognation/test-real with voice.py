@@ -1,33 +1,51 @@
 import cv2
-import pygame
+# import pygame
 from ultralytics import YOLO
 
+import sounddevice as sd
+import soundfile as sf
 
 def play_audio(file_path):
     try:
-        # Initialize Pygame
-        pygame.mixer.init()
-
         # Load the audio file
-        pygame.mixer.music.load(file_path)
-
-        # Play the audio file
-        pygame.mixer.music.play()
-
-        # Wait for the audio to finish playing
-        while pygame.mixer.music.get_busy():
-            pygame.time.Clock().tick(10)
+        data, fs = sf.read(file_path, dtype='float32')
+        
+        # Play the audio
+        sd.play(data, fs)
+        
+        # Wait until playback is finished
+        status = sd.wait(10)
+        if status:
+            print("An error occurred during playback.")
     except Exception as e:
-        print("Error playing audio:", e)
-    finally:
-        # Clean up Pygame
-        pygame.mixer.quit()
+        print("An error occurred:", e)
+
+# def play_audio(file_path):
+#     try:
+#         # Initialize Pygame
+#         pygame.mixer.init()
+
+#         # Load the audio file
+#         pygame.mixer.music.load(file_path)
+
+#         # Play the audio file
+#         pygame.mixer.music.play()
+
+#         # Wait for the audio to finish playing
+#         while pygame.mixer.music.get_busy():
+#             pygame.time.Clock().tick(10)
+#     except Exception as e:
+#         print("Error playing audio:", e)
+#     finally:
+#         # Clean up Pygame
+#         pygame.mixer.quit()
 
 
 
 # Load the YOLOv8 model
 
-model = YOLO('best.pt')
+model = YOLO('best.pt', device = 'gpu')
+# model.to('cuda')
 classes = model.names
 print(model.names)
 
